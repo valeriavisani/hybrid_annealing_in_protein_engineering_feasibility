@@ -1,7 +1,7 @@
 SOURCES OF THE PDB FILES:
 
-All instances valutate nel paper were built from experimentally determined structures retrieved from
-the RCSB Protein Data Bank (PDB).
+All instances evaluated in the paper were constructed from experimentally determined structures retrieved
+from the RCSB Protein Data Bank (PDB).
 
 This document report the name of the files, the PDB ID and the link to the RCSB Protein Data Bank page.
 
@@ -11,11 +11,11 @@ these instances is slightly smaller than the target size. We also note that the 
 states for each position, corresponding to the four nucleotides, which serve a role analogous to that
 of rotamers for the purposes of our calculations.
 
-"10residue.pdb" --> Protein 138D - https://www.rcsb.org/structure/138D
+"10residue.pdb" --> Structure 138D - https://www.rcsb.org/structure/138D
 
 "19residue.pdb" --> Protein 1BCV - https://www.rcsb.org/structure/1BCV
 
-"30residue.pdb" --> Protein 14BG - https://www.rcsb.org/structure/1B4G
+"30residue.pdb" --> Protein 1B4G - https://www.rcsb.org/structure/1B4G
 
 "38residue.pdb" --> Protein 1ABZ - https://www.rcsb.org/structure/1ABZ
 
@@ -41,7 +41,7 @@ of rotamers for the purposes of our calculations.
 
 "147residue.pdb" --> Protein 1ASH - https://www.rcsb.org/structure/1ASH
 
-"157residue.pdb" --> Protein 1CSZ - https://www.rcsb.org/structure/1CZS
+"157residue.pdb" --> Protein 1CZS - https://www.rcsb.org/structure/1CZS
 
 "168residue.pdb" --> Protein 11QE - https://www.rcsb.org/structure/11QE
 
@@ -51,25 +51,6 @@ of rotamers for the purposes of our calculations.
 
 "197residue.pdb" --> Protein 1AGY - https://www.rcsb.org/structure/1AGY
 
-"250residue.pdb" --> Protein 1CTM - https://www.rcsb.org/structure/1CTM
-
-"300residue.pdb" --> Protein 1A3H - https://www.rcsb.org/structure/1A3H
-
-"350residue.pdb" --> Protein 1EFY - https://www.rcsb.org/structure/1EFY
-
-"400residue.pdb" --> Protein 1INP - https://www.rcsb.org/structure/1INP
-
-"450residue.pdb" --> Protein 1MG1 - https://www.rcsb.org/structure/1MG1
-
-"500residue.pdb" --> Protein 1A8H - https://www.rcsb.org/structure/1A8H
-
-"540residue.pdb" --> Protein 1BA3 - https://www.rcsb.org/structure/1BA3
-
-"598residue.pdb" --> Protein 2VJI - https://www.rcsb.org/structure/2VJI
-
-"644residue.pdb" --> Protein 1QD1 - https://www.rcsb.org/structure/1QD1
-
-"700residue.pdb" --> Protein 1SJI - https://www.rcsb.org/structure/1SJI
 
 ADDITIONAL PDB FILES:
 

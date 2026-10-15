@@ -49,7 +49,7 @@ terms `E_ii` and `E_ij` are stored in `data/pyRosetta/energy_files`, and the val
 .
 ├── data/
 │   ├── pyRosetta/
-│   │   ├── pdb/                  input PDB files (sources: pdb_sources.txt)
+│   │   ├── pdb/                  input PDB files (sources: pdb_sources.txt) and check_pdb.py
 │   │   ├── energy_files/         one-body and two-body energy terms (CSV)
 │   │   └── n_rot_per_res/        real number of rotamers of each residue (CSV)
 │   ├── reference_results_{5,10}rot.csv            Gurobi reference (default config., 4 h)
@@ -81,8 +81,8 @@ terms `E_ii` and `E_ij` are stored in `data/pyRosetta/energy_files`, and the val
 
 ## Requirements
 
-- Python 3.10+
-- [PyRosetta](https://www.pyrosetta.org/)
+- Python 3.12
+- [PyRosetta](https://www.pyrosetta.org/) (installed with `pyrosetta-installer`, see below)
 - `gurobipy` (license needed)
 - `dwave-ocean-sdk` and a [D-Wave Leap](https://cloud.dwavesys.com/leap/) account with an API token
 
@@ -92,10 +92,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-PyRosetta is included in requirements.txt, but if the pip installation fails, you can install it manually:
+PyRosetta is not pinned in requirements.txt, because its wheels depend on the platform and the Python version. `pyrosetta-installer` is installed with the requirements; use it to install the PyRosetta build that matches your system:
 
 ```bash
-pip install pyrosetta-installer
 python -c 'import pyrosetta_installer; pyrosetta_installer.install_pyrosetta()'
 ```
 
@@ -119,12 +118,17 @@ python -m scripts.pyRosetta.create_energy_files_manual   -p <pdb_filename> -r <n
 ### 2. Solve the instances
 
 ```bash
-python -m scripts.gurobi -res <num_res> -rot <num_rot>
+python -m scripts.gurobi_reference -res <num_res> -rot <num_rot>
 python -m scripts.gurobi -res <num_res> -rot <num_rot> [-s <seed>]
 python -m scripts.hybrid_annealing -res <num_res> -rot <num_rot> [-run_id <run_id>]
 ```
 
-The hybrid solver needs the API token of your Leap account.
+The hybrid solver needs the API token of your Leap account. Create the file `scripts/configto.py`
+(it is not included in the repository, it is listed in `.gitignore`) containing:
+
+```python
+DWAVE_TOKEN = "<your Leap API token>"
+```
 
 Gurobi custom configuration: `MIPFocus=1`, `Heuristics=0.5`, `MIPGap=0.1`.
 
@@ -188,7 +192,7 @@ Apache License 2.0 and associated with the paper:
 
 - `scripts/pyRosetta/create_energy_files_official.py` and `scripts/pyRosetta/create_energy_files_manual.py` are adapted from their energy-file generation script. The header of each file lists the modifications.
 - `data/pyRosetta/pdb/4residue.pdb` was taken from their repository without modification. It was used only for testing and does not appear in the results of the paper.
-- As required by the Apache License 2.0, a copy of their license is included in [`third_party/LICENSE-quantum-protein-folding`](third_party/LICENSE_quantum-protein-folding). That file applies only to the material derived from their repository, not to the rest of this repository.
+- As required by the Apache License 2.0, a copy of their license is included in [`third_party/LICENSE_quantum-protein-folding`](third_party/LICENSE_quantum-protein-folding). That file applies only to the material derived from their repository, not to the rest of this repository.
 
 
 ## Citation
@@ -198,7 +202,7 @@ If you use this repository, please cite:
 ```bibtex
 @misc{visani2026,
   title = {Hybrid Quantum-Classical Annealing for Protein Side-Chain Optimization: A Feasibility Study},
-  author = {Visani Valeria B. C. and Reale Simone and Gautieri Alfonso and Di Nitto Elisabetta},
+  author = {Visani, Valeria B. C. and Reale, Simone and Gautieri, Alfonso and Di Nitto, Elisabetta},
   year = {2026},
   note = {Submitted to the IEEE International Symposium on Circuits and Systems (ISCAS) 2027}
 }

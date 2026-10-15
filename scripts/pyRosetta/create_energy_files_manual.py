@@ -56,7 +56,7 @@ def parse_args():
         description="Create energy files for protein folding."
     )
     parser.add_argument(
-        "-p", "--pdb", required=True, help="PDB filename (without .pdb extension)"
+        "-p", "--pdb", required=True, help="PDB filename (with .pdb extension)"
     )
     parser.add_argument(
         "-r",

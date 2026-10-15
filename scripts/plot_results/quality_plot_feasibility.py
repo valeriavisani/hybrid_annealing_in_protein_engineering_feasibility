@@ -12,8 +12,8 @@ Usage:
 
     --shared_y   use the same y scale in both panels (default: independent scales)
 
-Input files (in DATA_DIR), for each number of rotamers {rot} in ROTAMERS. All files have one row
-per run and contain the columns "num_res" and "num_rot":
+Input files (in DATA_DIR), for each number of rotamers {rot} in ROTAMERS. All files contain
+the columns "num_res" and "num_rot"; each file has one row per run, except the reference (one row per instance):
     reference_results_{rot}rot.csv            reference: Gurobi, default configuration, 4 h time limit
                                             (columns "gs_energy" and "status"; status "OPTIMAL"
                                             marks the instances where optimality was certified)

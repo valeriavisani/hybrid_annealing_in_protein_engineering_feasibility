@@ -120,7 +120,7 @@ def main():
         df_new = pd.DataFrame([row])
         df_new.to_csv(file_output_path, index=False)
 
-    print(f"File aggiornato o creato in: {file_output_path}")
+    print(f"File updated or created in: {file_output_path}")
     print(f"Status: {status_name}, mip_gap: {mip_gap}, runtime: {gurobi_runtime}")
 
     # ## prints: ##

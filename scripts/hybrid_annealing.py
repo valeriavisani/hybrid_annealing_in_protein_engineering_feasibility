@@ -133,20 +133,20 @@ def load_nrot_per_res(num_res):
 
     return nrot_per_res_list
 
-def da_microsecondi_a_secondi(us):
+def microseconds_to_seconds(us):
     # function to convert microseconds to seconds
 
     return us * 1e-6
 
-def format_binary_string(stringa: str, num_res: int, num_rot: int) -> str:
+def format_binary_string(bitstring: str, num_res: int, num_rot: int) -> str:
     # function to format a bitstring
 
     num_var = num_res * num_rot
 
-    if len(stringa) != num_var:
-        raise ValueError(f"The string length ({len(stringa)}) must be equal to num_res * num_rot ({num_var}).")
+    if len(bitstring) != num_var:
+        raise ValueError(f"The string length ({len(bitstring)}) must be equal to num_res * num_rot ({num_var}).")
 
-    blocks = [stringa[i:i + num_rot] for i in range(0, num_var, num_rot)]
+    blocks = [bitstring[i:i + num_rot] for i in range(0, num_var, num_rot)]
 
     return "   ".join(blocks)
 
@@ -154,12 +154,12 @@ def from_sample_to_energy(sample_arr: np.array, Q: np.array) -> float:
     # function to compute the energy associated with a bitstring, given the bitstring and Q
     # only used in the commented-out prints, useful for checking
 
-    lenght = len(sample_arr)
+    length = len(sample_arr)
 
     E = 0.0
-    for i in range(lenght):
+    for i in range(length):
         E += Q[i, i] * sample_arr[i]
-        for j in range(i+1, lenght):
+        for j in range(i+1, length):
             if Q[i, j] != 0:
                 E += Q[i, j] * sample_arr[i] * sample_arr[j]
     
@@ -236,8 +236,8 @@ def main():
         "num_rot": int(num_rot),
         "gs_bitstring": solution_bits_formatted,
         "gs_energy [REU]": energy,
-        "run_time [s]": da_microsecondi_a_secondi(run_time),
-        "QPU_access_time [s]": da_microsecondi_a_secondi(qpu_access_time)
+        "run_time [s]": microseconds_to_seconds(run_time),
+        "QPU_access_time [s]": microseconds_to_seconds(qpu_access_time)
     }
 
     file_output_path = DATA_DIR / "hybrid_annealing.csv"

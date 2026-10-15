@@ -51,7 +51,6 @@ pycparser==3.11
 pydantic==2.14.1
 pydantic_core==2.50.1
 pyparsing==3.3.3
-pyrosetta @ https://west.rosettacommons.org/pyrosetta/release/release/PyRosetta4.Release.python312.ubuntu.wheel/pyrosetta-0-cp312-cp312-linux_x86_64.whl#sha256=a3ccae9f7605744603c214cd6aec93e081a55d693d24b1811ea0e3d7212c40d6
 pyrosetta-installer==0.1.2
 PySocks==1.7.1
 python-dateutil==2.9.0.post0
