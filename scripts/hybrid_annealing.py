@@ -14,7 +14,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "-rot",
+        "-rot",     
         "--num_rot",
         type=int,
         required=True,

@@ -1,0 +1,2 @@
+num_res,num_rot,gs_bitstring,gs_energy,execution_time,status,mip_gap
+4,2,01   01   01   10,4.4043562199999995,0.006409168243408203,OPTIMAL,0.0

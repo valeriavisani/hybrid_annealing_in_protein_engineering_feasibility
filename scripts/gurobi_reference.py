@@ -5,7 +5,7 @@ from .hybrid_annealing import get_Q, format_binary_string, parse_args, from_samp
 
 from .config import N_ROT_PER_RES, DATA_DIR
 
-## To run: python -m scripts.gurobi -res <num_res> -rot <num_rot>
+## To run: python -m scripts.gurobi_reference -res <num_res> -rot <num_rot>
 
 def main():
 

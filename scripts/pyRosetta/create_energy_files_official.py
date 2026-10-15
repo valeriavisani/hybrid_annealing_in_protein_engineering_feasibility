@@ -9,6 +9,7 @@ from pyrosetta import init, pose_from_pdb, get_score_function
 from pyrosetta.rosetta.protocols.quantum_annealing import InteractionGraphSummaryMetric
 
 ## To run: python -m scripts.pyRosetta.create_energy_files_official -p <pdb_filename> -r <num_rotamers> -i <starting_rotamer_index>
+## Note: <pdb_filename> must contain the extension
 
 from ..config import PDB, ENERGY_FILES, N_ROT_PER_RES
 

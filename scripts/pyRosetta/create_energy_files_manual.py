@@ -10,6 +10,7 @@ from pyrosetta.rosetta.core.pack.rotamer_set import RotamerSets
 from pyrosetta.rosetta.core.pack.interaction_graph import InteractionGraphFactory
 
 ## To run: python -m scripts.pyRosetta.create_energy_files_manual -p <pdb_filename> -r <num_rotamers> -i <starting_rotamer_index>
+## Note: <pdb_filename> must contain the extension
 
 from ..config import PDB, ENERGY_FILES, N_ROT_PER_RES
 
