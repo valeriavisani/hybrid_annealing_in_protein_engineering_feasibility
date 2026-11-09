@@ -3,7 +3,8 @@
 Code and data accompanying the paper
 
 > **Hybrid Quantum-Classical Annealing for Protein Side-Chain Optimization: A Feasibility Study**
-> Valeria B. C. Visani, Simone Reale, Alfonso Gautieri, Elisabetta Di Nitto
+> Valeria B. C. Visani, Simone Reale, Alfonso Gautieri, Elisabetta Di Nitto.
+> ArXiv preprint: [arXiv:2611.08696](https://arxiv.org/abs/2611.08696), 2026.
 >
 > Submitted to the IEEE International Symposium on Circuits and Systems (ISCAS) 2027,
 > Special Session *"Bridging Quantum Circuits and Real-World Applications: Algorithms,
@@ -72,7 +73,7 @@ terms `E_ii` and `E_ij` are stored in `data/pyRosetta/energy_files`, and the val
 │       ├── quality_plot_feasibility.py   gap-from-reference figure
 │       └── qpu_time.py                   QPU access time statistics
 ├── third_party/
-│   └── LICENSE-quantum-protein-folding   Apache-2.0 license of the stfc repository
+│   └── LICENSE_quantum-protein-folding   Apache-2.0 license of the stfc repository
 ├── LICENSE
 ├── README.md
 └── requirements.txt
@@ -178,7 +179,7 @@ Energies are in Rosetta Energy Units (REU), score function used: `ref2015`.
 
 ## Machine used
 
-Energy files and Gurobi runs: Intel Xeon Silver 4114 (16 cores, 2.2 GHz, 62 GiB RAM).
+Energy files and Gurobi runs: Intel Xeon Silver 4114 (16 vCPUs, 2.2 GHz, 62 GiB RAM).
 
 ## Third-party material
 
@@ -201,9 +202,12 @@ If you use this repository, please cite:
 
 ```bibtex
 @misc{visani2026,
-  title = {Hybrid Quantum-Classical Annealing for Protein Side-Chain Optimization: A Feasibility Study},
-  author = {Visani, Valeria B. C. and Reale, Simone and Gautieri, Alfonso and Di Nitto, Elisabetta},
-  year = {2026},
-  note = {Submitted to the IEEE International Symposium on Circuits and Systems (ISCAS) 2027}
+      title={Hybrid Quantum-Classical Annealing for Protein Side-Chain Optimization: A Feasibility Study}, 
+      author={Valeria B. C. Visani and Simone Reale and Alfonso Gautieri and Elisabetta Di Nitto},
+      year={2026},
+      eprint={2611.08696},
+      archivePrefix={arXiv},
+      primaryClass={cs.ET},
+      url={https://arxiv.org/abs/2611.08696}, 
 }
 ```

@@ -223,3 +223,4 @@ __marimo__/
 # Altro
 venv
 scripts/configto.py
+.vscode/
